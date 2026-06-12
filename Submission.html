@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>sticker submission</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: monospace;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 80vh;
+      margin: 0 auto;
+      border: 1px solid #fff;
+      padding: 20px;
+      background: rgba(0,0,0,0.5);
+    }
+    .title {
+      font-size: 40px;
+      color: #0f0;
+      margin-bottom: 20px;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+    .item {
+      margin-bottom: 24px;
+    }
+    .label-jp {
+      font-size: 32px;
+      color: #fff;
+      display: block;
+    }
+    .label-en {
+      font-size: 28px;
+      color: #666; /* あえてグレーにしてノイズっぽく */
+      display: block;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    input[type="url"] {
+      width: 100%;
+      box-sizing: border-box;
+      background: transparent;
+      border: 1px solid #fff;
+      color: #0f0;
+      padding: 10px;
+      font-family: monospace;
+      font-size: 32px;
+    }
+    input[type="url"]::placeholder {
+      color: #333;
+    }
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .radio-label {
+      font-size: 30px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .radio-en {
+      font-size: 36px;
+      color: #666;
+    }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: 1px solid #0f0;
+      color: #0f0;
+      padding: 20px;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 42px;
+      margin-top: 12px;
+      transition: 0.2s;
+    }
+    .submit-btn:hover {
+      background: #0f0;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="title">-- ステッカー　貼っちゃう？ --<br> WANNA SLAP A STICKER? </div>
+
+  <form action="https://neocities.org/site_contact" method="POST">
+    
+    <div class="item">
+      <label class="label-jp">貼りたいステッカーのurlを教えてね</label>
+      <label class="label-en">[ INPUT STICKER IMAGE URL (DIRECT LINK) ]</label>
+      <input type="url" name="sticker_url" placeholder="https://..." required>
+    </div>
+    
+    <div class="item">
+      <label class="label-jp">どこに貼りたい？</label>
+      <label class="label-en">[ TARGET POSITION ]</label>
+      <div class="radio-group">
+        <label class="radio-label">
+          <input type="radio" name="position" value="center"> 
+          <span>目立つトコ <span class="radio-en">/ CENTER AREA</span></span>
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="position" value="edge"> 
+          <span>隅っこ <span class="radio-en">/ HIDDEN SPOT</span></span>
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="position" value="random" checked> 
+          <span>おまかせ <span class="radio-en">/ OMAKASE</span></span>
+        </label>
+      </div>
+    </div>
+    
+    <div class="item">
+      <label class="label-jp">リンク先は？（あれば書いてね）</label>
+      <label class="label-en">[ DESTINATION URL (OPTIONAL) ]</label>
+      <input type="url" name="back_link" placeholder="https://...">
+    </div>
+    
+    <button type="submit" class="submit-btn">SEND</button>
+  </form>
+</div>
+
+</body>
+</html>
