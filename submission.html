@@ -87,6 +87,30 @@
       background: #0f0;
       color: #000;
     }
+        /* 追加するバナースタイル（下部用） */
+    .my-banners-bottom {
+      margin-top: 30px;
+      text-align: center;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+    }
+    .banner-flex {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .banner-img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #fff;
+      transition: 0.2s;
+    }
+    .banner-img:hover {
+      border-color: #0f0;
+      filter: brightness(1.2);
+    }
+
   </style>
 </head>
 <body>
@@ -129,6 +153,17 @@
      <input type="hidden" name="_next" value="https://あなたのNeocitiesのサイトURL/index.html">
     <button type="submit" class="submit-btn">SEND</button>
   </form>
+    <div class="my-banners-bottom">
+    <div class="banner-flex">
+      <a href="自分のサイトのURL1" target="_blank">
+        <img src="バナー画像1のURL" alt="Banner 1" class="banner-img">
+      </a>
+      <a href="自分のサイトのURL2" target="_blank">
+        <img src="バナー画像2のURL" alt="Banner 2" class="banner-img">
+      </a>
+    </div>
+  </div>
+
 </div>
 
 </body>
