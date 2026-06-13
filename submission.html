@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
@@ -13,11 +13,13 @@
       line-height: 1.6;
     }
     .container {
-      max-width: 80vh;
+      width: 100%;
+      max-width: 500px; /* スマホでもPCでも綺麗に収まるサイズに変更 */
       margin: 0 auto;
       border: 1px solid #fff;
       padding: 20px;
       background: rgba(0,0,0,0.5);
+      box-sizing: border-box;
     }
     .title {
       font-size: 14px;
@@ -36,7 +38,7 @@
     }
     .label-en {
       font-size: 12px;
-      color: #666; /* あえてグレーにしてノイズっぽく */
+      color: #666; 
       display: block;
       margin-bottom: 6px;
       text-transform: uppercase;
@@ -88,7 +90,8 @@
       background: #0f0;
       color: #000;
     }
-        /* 追加するバナースタイル（下部用） */
+
+    /* 下部バナーエリア */
     .my-banners-bottom {
       margin-top: 30px;
       text-align: center;
@@ -101,9 +104,11 @@
       gap: 15px;
       flex-wrap: wrap;
     }
+    /* ミニバナー専用の設定：サイズを固定し、ドットをクッキリさせる */
     .banner-img {
-      max-width: 100%;
-      height: auto;
+      width: 88px;
+      height: 31px;
+      image-rendering: pixelated; /* GIFアニメやドット絵がボケないとか */
       border: 1px solid #fff;
       transition: 0.2s;
     }
@@ -111,7 +116,6 @@
       border-color: #0f0;
       filter: brightness(1.2);
     }
-
   </style>
 </head>
 <body>
@@ -151,15 +155,16 @@
       <label class="label-en">[ DESTINATION URL (OPTIONAL) ]</label>
       <input type="url" name="back_link" placeholder="https://...">
     </div>
-     <input type="hidden" name="_next" value="https://あなたのNeocitiesのサイトURL/index.html">
+    <input type="hidden" name="_next" value="https://leftypandarecords.neocities.org/index.html">
     <button type="submit" class="submit-btn">SEND</button>
   </form>
-    <div class="my-banners-bottom">
+
+  <div class="my-banners-bottom">
     <div class="banner-flex">
       <a href="https://leftypandarecords.neocities.org/" target="_blank">
         <img src="images/banner1.gif" alt="Banner 1" class="banner-img">
       </a>
-      <a href="https://leftypandarecords.neocities.org/” target="_blank">
+      <a href="https://leftypandarecords.neocities.org/" target="_blank">
         <img src="images/banner2.gif" alt="Banner 2" class="banner-img">
       </a>
     </div>
@@ -169,3 +174,4 @@
 
 </body>
 </html>
+
